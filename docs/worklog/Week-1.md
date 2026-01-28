@@ -2,7 +2,7 @@
 
 
 ## Week Objective
-Finalize requirements, system design, and begin project setup without implementing business logic or UI.
+Finalize requirements, system design, and begin project setup and understanding implemention of business logic and UI.
 
 
 ---
