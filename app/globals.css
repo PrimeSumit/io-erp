@@ -1,26 +1,54 @@
 @import "tailwindcss";
 
+/* 1. FORCE LIGHT MODE DEFAULTS */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* --- BRAND COLORS --- */
+  /* Plum / Mauve (Buttons & Headers) */
+  --primary: #7e4577;
+  --primary-foreground: #ffffff;
+  --primary-hover: #693b63;
+
+  /* Teal (Accents & Links) */
+  --teal: #008784;
+  --teal-foreground: #ffffff;
+  --teal-light: #e5f6f8;
+  --teal-border: #d3eeef;
 }
 
+/* 2. REMOVED DARK MODE SECTION TO FIX BLACK BACKGROUND ISSUE */
+
+/* 3. MAP VARIABLES TO TAILWIND */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+
+  --color-teal: var(--teal);
+  --color-teal-light: var(--teal-light);
+  --color-teal-border: var(--teal-border);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* --- COMPONENT CLASSES --- */
+@layer components {
+  .input-primary {
+    @apply block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm placeholder:text-gray-400 outline-none transition-all;
+    @apply hover:border-gray-400;
+    /* "Plum Shade" Focus Ring */
+    @apply focus:border-primary focus:ring-4 focus:ring-primary/20;
+  }
 }

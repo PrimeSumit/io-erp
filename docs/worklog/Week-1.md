@@ -41,3 +41,19 @@ Finalize requirements, system design, and begin project setup and understanding 
 
 
 ---
+
+
+## Day 4 – Database Schema Implementation (Supabase)
+- Implemented full PostgreSQL schema in Supabase based on finalized design
+- Created enums for roles, task status, priority, and approval decisions
+- Implemented core tables: organizations, departments, users, tasks, approvals, audit_logs, notifications, attachments
+- Linked application users with Supabase Auth (auth.users)
+- Handled circular dependencies (department manager relationship)
+- Added soft delete support and audit-ready fields
+- Implemented updated_at auto-update triggers
+- Added performance indexes for frequently queried fields
+- Validated schema using Supabase Schema Visualizer
+- Enabled Row Level Security (RLS) on all tables
+
+
+---
